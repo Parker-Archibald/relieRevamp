@@ -2,6 +2,7 @@ import './App.css';
 import Routing from './Config/Routing';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Nav from './Config/Nav';
+import TopNav from './Config/TopNav';
 
 const App = () => {
   if(localStorage.getItem('isLoggedIn') === 'true') {
@@ -9,6 +10,7 @@ const App = () => {
       <div className="App">
         <Router>
           <Nav/>
+          <TopNav/>
           <Routing/>
         </Router>
       </div>

@@ -2,6 +2,8 @@
     position: fixed;
     font-size: 8vw;
     left: 2vw;
+    top: 1.5vw;
+    color: white;
 }
 
 .navX {
