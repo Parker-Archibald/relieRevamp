@@ -1,14 +1,16 @@
 import React from 'react';
 import '../Styles/Login.css';
 import { useState } from 'react';
+import {RELIE_API} from '../Config/Com';
 
 const Login = () => {
 
     const [state, setState] = useState({
-        testEmail: 'test@test.com',
-        testPassword: 'test',
+        // testEmail: 'test@test.com',
+        // testPassword: 'test',
         tempEmail: '',
         tempPassword: ''
+
     });
 
     const handleChange = (e) => {
@@ -17,15 +19,31 @@ const Login = () => {
         })
     }
 
-    const handleLogin = () => {
-        if(state.tempEmail === state.testEmail && state.tempPassword === state.testPassword) {
+    async function handleLogin() {
 
-            localStorage.setItem('isLoggedIn', true)
-            setTimeout("document.location.reload(true)", 200);
-        }
-        else {
-            alert('Not logged in!')
-        }
+        await fetch(`${RELIE_API}user/${state.tempEmail}/${state.tempPassword}`)
+        .then(results => results.json())
+        .then(results => {
+            if(results.loggedIn === true) {
+                localStorage.setItem('isLoggedIn', true)
+                localStorage.setItem('id', `${results.id}`)
+                setTimeout("document.location.reload(true)", 200);
+            }
+            else {
+                alert(results.message)
+            }
+        })
+
+        // testing hard coded login
+
+        // if(state.tempEmail === state.testEmail && state.tempPassword === state.testPassword) {
+
+        //     localStorage.setItem('isLoggedIn', true)
+        //     setTimeout("document.location.reload(true)", 200);
+        // }
+        // else {
+        //     alert('Not logged in!')
+        // }
     }
 
     return (

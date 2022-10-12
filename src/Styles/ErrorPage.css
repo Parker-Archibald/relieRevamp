@@ -1,0 +1,12 @@
+#errorPagePic {
+    position: relative;
+    width: 100vw;
+    top: 25vh;
+}
+
+#errorText {
+    position: relative;
+    text-align: center;
+    top: 30vh;
+    font-size: 6vw;
+}

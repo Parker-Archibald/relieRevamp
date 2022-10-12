@@ -1,0 +1,7 @@
+#ordersTitle {
+    font-size: 8vw;
+    text-align: center;
+    background-color: var(--Main-Blue);
+    height: 8vh;
+    line-height: 8vh;
+}

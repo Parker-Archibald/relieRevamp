@@ -1,0 +1,1 @@
+export const RELIE_API = process.env.REACT_APP_RELIE_API || 'http://localhost:3000/';

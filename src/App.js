@@ -2,15 +2,15 @@ import './App.css';
 import Routing from './Config/Routing';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Nav from './Config/Nav';
-import TopNav from './Config/TopNav';
+import {RELIE_API} from './Config/Com';
 
 const App = () => {
+
   if(localStorage.getItem('isLoggedIn') === 'true') {
     return (
       <div className="App">
         <Router>
           <Nav/>
-          <TopNav/>
           <Routing/>
         </Router>
       </div>

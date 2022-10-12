@@ -1,9 +1,14 @@
 .navHamburger {
     position: fixed;
     font-size: 8vw;
-    left: 2vw;
-    top: 1.5vw;
-    color: white;
+    left: 3vw;
+    top: 2vh;
+    z-index: 999;
+    /* color: white; */
+}
+
+.navHamburger:hover {
+    cursor: pointer;
 }
 
 .navX {
@@ -28,6 +33,7 @@
     box-shadow: 1px 1px 4px 2px lightgray;
     text-align: center;
     overflow: hidden;
+    z-index: 999;
     animation: openNav .25s forwards;
 }
 
@@ -38,6 +44,7 @@
     box-shadow: 1px 1px 4px 2px lightgray;
     text-align: center;
     overflow: hidden;
+    z-index: 999;
     animation: closeNav .25s forwards;
 }
 
@@ -102,7 +109,7 @@
 }
 
 #navDashboardContainer:hover, #navOrdersContainer:hover, #navQuotesContainer:hover, #navTrainingContainer:hover, #navPaperworkContainer:hover, #navLogoutContainer:hover {
-    background-color: rgb(96, 246, 241);
+    background-color: var(--Main-Blue);
 }
 
 #navDashboardContainer {

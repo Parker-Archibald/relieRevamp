@@ -1,0 +1,63 @@
+#dashboardContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+#dashboardTitle {
+    font-size: 8vw;
+    text-align: center;
+    background-color: var(--Main-Blue);
+    height: 8vh;
+    line-height: 8vh;
+}
+
+#dashboardProfileBox {
+    position: relative;
+    background-color: white;
+    width: 90vw;
+    left: 5vw;
+    top: 2vh;
+    padding-bottom: 2vh;
+    box-shadow: 2px 2px 4px 1px gray;
+}
+
+#dashboardProfilePic {
+    position: relative;
+    align-items: center;
+    width: 40vw;
+    left: 25vw
+}
+
+#dashboardProfileTitle {
+    text-align: center;
+}
+
+#dashboardData {
+    position: relative;
+    display: flex;
+    width: 90vw;
+    left: 5vw;
+    top: 10vw;
+}
+
+#dashboardQuotesBox, #dashboardOrdersBox {
+    position: relative;
+    background-color: white;
+    width: 45vw;
+    text-align: center;
+    height: 20vh;
+    box-shadow: 2px 2px 4px 1px gray;
+}
+
+#dashboardOrdersBox {
+    margin-left: 5vw;
+}
+
+#dashboardQuotesTitle, #dashboardOrdersTitle {
+    position: relative;
+    font-size: 6vw;
+}
+
+#dashBoardOrderAmount, #dashBoardQuotesAmount {
+    font-size: 20vw;
+}

@@ -1,0 +1,40 @@
+#profileCircle {
+    position: relative;
+    width: 150vw;
+    height: 40vh;
+    background-color: var(--Main-Blue);
+    border-radius: 50%;
+    top: -20vh;
+    left: -22vw;
+}
+
+#profilePic {
+    position: relative;
+    border-radius: 50%;
+    width: 30vw;
+    top: -25vh;
+    left: 35vw;
+}
+
+#profileTitle {
+    position: relative;
+    text-align: center;
+    top: -24vh;
+    font-size: 10vw;
+}
+
+#profileInfoContainer {
+    position: relative;
+    width: 90vw;
+    left: 5vw;
+    background-color: white;
+    top: -20vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 4px 1px gray;
+}
+
+#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined, #profileStatus {
+    margin: 2vw;
+    font-size: 5vw;
+}
