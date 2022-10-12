@@ -1,0 +1,121 @@
+.navHamburger {
+    position: fixed;
+    font-size: 8vw;
+    left: 2vw;
+}
+
+.navX {
+    display: none;
+}
+
+.navXAfter {
+    position: fixed;
+    z-index: 1000;
+    animation: slideX .25s forwards;
+    top: .5vh;
+}
+
+.navAll {
+    display: none;
+}
+
+.navAllAfter {
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 1px 1px 4px 2px lightgray;
+    text-align: center;
+    overflow: hidden;
+    animation: openNav .25s forwards;
+}
+
+.navAllAfterClose {
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 1px 1px 4px 2px lightgray;
+    text-align: center;
+    overflow: hidden;
+    animation: closeNav .25s forwards;
+}
+
+@keyframes openNav {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 60vw;
+    }
+}
+
+@keyframes closeNav {
+    from {
+        width: 60vw;
+    }
+    to {
+        width: 0vw;
+    }
+}
+
+@keyframes slideX {
+    from {
+        left: 0vw;
+    }
+    to {
+        left: 55vw;
+    }
+}
+
+#navProfilePic {
+    position: relative;
+    top: 2vh;
+}
+
+#navProfileIcon {
+    position: relative;
+    /* font-size: 20vw; */
+    width: 40vw;
+}
+
+#navName {
+    position: relative;
+    top: 2vh;
+    border-bottom: 1px solid gray;
+    width: 90%;
+    left: 5%;
+    padding-bottom: 1vh;
+}
+
+#navButtonsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#navDashboardContainer, #navOrdersContainer, #navQuotesContainer, #navTrainingContainer, #navPaperworkContainer, #navLogoutContainer  {
+    margin-top: 2vw;
+    width: 100%;
+    height: 6vh;
+    position: relative;
+    display: flex;
+}
+
+#navDashboardContainer:hover, #navOrdersContainer:hover, #navQuotesContainer:hover, #navTrainingContainer:hover, #navPaperworkContainer:hover, #navLogoutContainer:hover {
+    background-color: rgb(96, 246, 241);
+}
+
+#navDashboardContainer {
+    margin-top: 14vw;
+}
+
+#navDashboardIcon, #navDashboardButton, #navOrdersIcon, #navOrdersButton, #navQuotesIcon, #navQuotesButton, #navTrainingIcon, #navTrainingButton, #navPaperworkIcon, #navPaperworkButton, #navLogoutIcon, #navLogoutButton {
+    position: relative;
+    margin: 2vw;
+    top: .5vh;
+    
+}
+
+#navDashboardIcon, #navOrdersIcon, #navQuotesIcon, #navTrainingIcon, #navPaperworkIcon, #navLogoutIcon {
+    font-size: 6vw;
+    margin-left: 10vw;
+}
+

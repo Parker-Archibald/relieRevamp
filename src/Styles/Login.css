@@ -1,0 +1,47 @@
+#loginContainer {
+    text-align: center;
+    height: 100vh;
+}
+
+#loginLogo {
+    position: relative;
+    width: 60vw;
+    top: 20vh;
+}
+
+#loginTitle {
+    position: relative;
+    top: 20vh;
+    font-size: 6vw;
+}
+
+#loginForm {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    top: 25vh;
+}
+
+#loginEmail, #loginPassword {
+    margin: 2vw;
+    margin-top: 4vw;
+    width: 60vw;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+#loginEmail:focus, #loginPassword:focus {
+    outline: none;
+}
+
+#loginButton {
+    position: relative;
+    background-color: rgb(103, 219, 221);
+    width: 20vw;
+    height: 4vh;
+    line-height: 4vh;
+    border-radius: 10px;
+    top: 2vh;
+}
