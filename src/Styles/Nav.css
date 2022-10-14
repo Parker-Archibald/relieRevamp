@@ -128,3 +128,47 @@
     margin-left: 10vw;
 }
 
+.W9Container, .reliContractContainer, .directDepositContainer, #tenNinteyNineContainer {
+    position: relative;
+    margin: 2vw;
+    text-align: left;
+    left: 20vw;
+    /* top: .5vh; */
+    /* font-size: 6vw; */
+}
+
+.paperworkContainer {
+    display: none;
+}
+
+.paperworkContainerAfter {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: openPaperwork .25s forwards;
+}
+
+.paperworkContainerAfterClose {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: closePaperwork .25s forwards;
+}
+
+@keyframes openPaperwork {
+    from {
+        height: 0vh;
+    }
+    to {
+        height: 18vh;
+    }
+}
+
+@keyframes closePaperwork {
+    from {
+        height: 12vh;
+    }
+    to {
+        height: 0vh;
+    }
+}

@@ -46,6 +46,15 @@ const Nav = () => {
         document.getElementById('navX').className = 'navX';
     }
 
+    const handleOpenPaperwork = () => {
+        if(document.getElementById('paperworkContainer').className === 'paperworkContainer' || document.getElementById('paperworkContainer').className === 'paperworkContainerAfterClose') {
+            document.getElementById('paperworkContainer').className = 'paperworkContainerAfter';
+        }
+        else {
+            document.getElementById('paperworkContainer').className = 'paperworkContainerAfterClose';
+        }
+    }
+
     return (
         <div id='navContainer'>
             <div id='navHamburger' className='navHamburger' onClick={handleOpenNav}>
@@ -79,10 +88,16 @@ const Nav = () => {
                         <MdCastForEducation id='navTrainingIcon'/>
                         <div id='navTrainingButton'>Training</div>
                     </Link>
-                    <div id='navPaperworkContainer'>
+                    <div id='navPaperworkContainer' onClick={handleOpenPaperwork}>
                         <FaPenNib id='navPaperworkIcon'/>
                         <div id='navPaperworkButton'>Paperwork</div>
                     </div>
+                   <div id='paperworkContainer' className='paperworkContainer'>
+                        <a href='https://www.irs.gov/pub/irs-pdf/f1099msc.pdf' target="_blank" id='tenNinteyNineContainer' style={{'textDecoration': 'none', 'color': 'black'}}>1099</a>
+                        <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" id='W9Container' className='W9Container' style={{'textDecoration': 'none', 'color': 'black'}}>W-9</a>
+                        <a href="https://reliesolutions.com/vendor/codefire/cfusermgmt/web/images/paper_work/2019%20Rep%20Agreement.pdf" target="_blank" id='reliContractContainer' className='reliContractContainer' style={{'textDecoration': 'none', 'color': 'black'}}>Reli Contract</a>
+                        <a href="https://reliesolutions.com/vendor/codefire/cfusermgmt/web/images/paper_work/direct_dep_elevate.pdf" target="_blank" id='directDepositContainer' className='directDepositContainer' style={{'textDecoration': 'none', 'color': 'black'}}>Direct Deposit</a>
+                   </div>
                     <Link to='/' id='navLogoutContainer' onClick={handleLogout} style={{'textDecoration': 'none', 'color': 'black'}}>
                         <FiLogOut id='navLogoutIcon'/>
                         <div id='navLogoutButton'>Logout</div>
