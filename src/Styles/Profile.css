@@ -1,3 +1,8 @@
+#profileContainer {
+    height: 100vh;
+    overflow: hidden;
+}
+
 #profileCircle {
     position: relative;
     width: 150vw;
@@ -37,4 +42,9 @@
 #profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined, #profileStatus {
     margin: 2vw;
     font-size: 5vw;
+    padding-bottom: 4vw;
+}
+
+#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined {
+    border-bottom: 1px solid gray;
 }

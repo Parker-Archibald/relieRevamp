@@ -1,0 +1,28 @@
+#orderListContainer {
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    height: 6vh;
+    line-height: 6vh;
+    margin-bottom: 2vh;
+    width: 90%;
+    left: 5%;
+}
+
+#orderListContainer:hover {
+    color: gray;
+}
+
+#orderListName {
+    margin-left: 2%;
+}
+
+#orderListCost {
+    position: relative;
+    margin-left: 50%;
+}
+
+#orderListArrow {
+    margin-left: 4.75vw;
+    margin-top: 4.75vw;
+}

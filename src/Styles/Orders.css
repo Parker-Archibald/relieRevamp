@@ -5,3 +5,98 @@
     height: 8vh;
     line-height: 8vh;
 }
+
+#ordersAll {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: white;
+    width: 90vw;
+    left: 5vw;
+    margin-top: 5vh;
+}
+
+#addOrdersContainer {
+    display: flex;
+    margin-left: 4vw;
+}
+
+#addOrdersTitle {
+    font-size: 6vw;
+    margin-top: 2vw;
+}
+
+#addOrdersButton {
+    margin-left: 30vw;
+    margin-top: 2vw;
+    background-color: var(--Main-Blue);
+    width: 25vw;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#addOrdersLine {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border-bottom: 1px solid rgb(232, 231, 231);
+}
+
+#searchMyOrdersContainer {
+    display: flex;
+    margin-bottom: 2vh;
+}
+
+#searchByDropdown {
+    position: relative;
+    left: 5%;
+    border-radius: 6px;
+}
+
+#searchMyOrdersIcon {
+    position: relative;
+    left: 9vw;
+    z-index: 100;
+}
+
+#searchMyOrders {
+    position: absolute;
+    width: 60%;
+    left: 35%;
+    border: none;
+    border-bottom: 1px solid gray;
+    text-indent: 5vw;
+}
+
+#searchMyOrders:focus {
+    outline: none;
+}
+
+#loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

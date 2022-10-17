@@ -1,0 +1,119 @@
+#profileEditButton {
+    position: relative;
+    background-color: var(--Main-Blue);
+    top: -15vh;
+    width: 30vw;
+    height: 10vw;
+    text-align: center;
+    line-height: 10vw;
+    border-radius: 20px;
+    left: 35vw;
+}
+
+.profileModal{
+   display: none;
+}
+
+.profileModalAfter {
+    background-color: white;
+    position: fixed;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 1px gray;
+    animation: openProfileModal .5s forwards;
+}
+
+@keyframes openProfileModal {
+    from {
+        height: 0vh;
+        width: 0vw;
+        left: 50vw;
+        top: 50vh;
+    }
+    to {
+        width: 80vw;
+        height: 70vh;
+        left: 10vw;
+        top: 15vh;
+    }
+}
+
+.profileModalAfterClose {
+    background-color: white;
+    position: fixed;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 1px gray;
+    animation: closeProfileModal .25s forwards;
+}
+
+@keyframes closeProfileModal {
+    from {
+        width: 80vw;
+        height: 70vh;
+        left: 10vw;
+        top: 15vh;
+    }
+    to {
+        height: 0vh;
+        width: 0vw;
+        left: 50vw;
+        top: 50vh;
+        box-shadow: none;
+    }
+}
+
+#editProfileTitle {
+    background-color: var(--Main-Blue);
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 6vw;
+}
+
+#editProfileModalPicture {
+    position: relative;
+    width: 25vw;
+    left: 32%;
+    margin-top: 2vh;
+}
+
+#editProfileModalInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#profileModalFnameText, #profileModalLnameText, #profileModalEmailText, #profileModalPhoneText {
+    margin: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#profileModalFname, #profileModalLname, #profileModalEmail, #profileModalPhone {
+    margin: 3vw;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+#profileModalFname:focus, #profileModalLname:focus, #profileModalEmail:focus, #profileModalPhone:focus {
+    outline: none;
+}
+
+#profileModalButtons {
+    display: flex;
+}
+
+#profileModalSaveButton, #profileModalCancelButton {
+    position: relative;
+    background-color: var(--Main-Blue);
+    width: 20vw;
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    left: 16%;
+    margin: 3vw;
+}
+
+#profileModalCancelButton {
+    background-color: lightgray;
+}

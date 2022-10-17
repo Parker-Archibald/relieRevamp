@@ -1,0 +1,7 @@
+.loadingContainer {
+    display: none;
+}
+
+.loadingContainerAfter {
+    font-size: 10vw;
+}
