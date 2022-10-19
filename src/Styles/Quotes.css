@@ -5,3 +5,58 @@
     height: 8vh;
     line-height: 8vh;
 }
+
+#quotesAll {
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    left: 5vw;
+    top: 10vw;
+    border-radius: 8px;
+}
+
+#quotesTopContainer {
+    display: flex;
+}
+
+#quotesTopTitle {
+    font-size: 8vw;
+    text-indent: 2vw;
+}
+
+#addQuoteButton {
+    position: relative;
+    background-color: var(--Main-Blue);
+    width: 25vw;
+    text-align: center;
+    height: 4vh;
+    line-height: 4vh;
+    border-radius: 8px;
+    margin: 2vw;
+    margin-left: 20vw;
+}
+
+#quotesTopLine {
+    position: relative;
+    border-bottom: 1px solid rgb(232, 231, 231);
+    width: 90%;
+    left: 5%;
+    margin-top: 2vw;
+}
+
+#searchQuotesContainer {
+    display: flex;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+#searchQuotesInput {
+    position: absolute;
+    width: 59%;
+    left: 35%;
+    border: none;
+    border-bottom: 1px solid gray;
+    text-indent: 5vw;
+}
