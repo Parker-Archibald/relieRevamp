@@ -24,14 +24,63 @@
     margin-left: 40vw;
 }
 
-#quoteArrow {
+.quoteArrow {
     position: relative;
     margin-top: 5vw;
     margin-left: 6vw;
 }
 
+.quoteArrowDownContainer {
+    display: none;
+}
+
+.quoteArrowDownContainerAfter {
+    position: relative;
+    margin-top: 1vw;
+    margin-left: 6vw;
+}
+
 #quoteDetailContainer {
     background-color: aliceblue;
-    height: 20vh;
     margin-top: -4.5vw;
+    display: none;
+}
+
+#singleQuoteStatusText, #singleQuotePhoneText, #singleQuoteSqFootText, #singleQuoteTot1Text, #singleQuoteTot2Text {
+    display: flex;
+    position: relative;
+    margin: 2vw;
+    left: 2vw;
+    font-size: 5vw;
+}
+
+#singleQuoteStatus, #singleQuotePhone, #singleQuoteSqFoot, #singleQuoteTot1, #singleQuoteTot2 {
+    position: absolute;
+    right: 0;
+    margin-right: 4vw;
+}
+
+#singleQuoteUnderline {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    border-bottom: 1px solid lightgray;
+}
+
+@keyframes openDetail {
+    from {
+        height: 0vh;
+    }
+    to {
+        height: 25vh;
+    }
+}
+
+@keyframes closeDetail {
+    from {
+        height: 25vh
+    }
+    to {
+        height: 0vh;
+    }
 }
