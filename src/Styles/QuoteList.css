@@ -6,7 +6,6 @@
     left: 5%;
 }
 
-
 #quoteListTitleContainer {
     display: flex;
     height: 6vh;
@@ -20,24 +19,21 @@
     color: gray;
 }
 
+#quoteListTitle {
+    width: 70vw;
+}
+
 #quoteListDate {
-    margin-left: 40vw;
-}
-
-.quoteArrow {
     position: relative;
-    margin-top: 5vw;
-    margin-left: 6vw;
+    margin-left: 10vw;
+    left: 2vw
 }
 
-.quoteArrowDownContainer {
-    display: none;
-}
-
-.quoteArrowDownContainerAfter {
+.quoteArrowDown{
     position: relative;
-    margin-top: 1vw;
+    margin-top: 2.5vw;
     margin-left: 6vw;
+    font-size: 8vw;
 }
 
 #quoteDetailContainer {

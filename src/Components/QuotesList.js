@@ -38,14 +38,14 @@ const QuotesList = (props) => {
         if(!document.getElementById(`${quote.quote_name}quoteDetailContainer`).name || document.getElementById(`${quote.quote_name}quoteDetailContainer`).name === 'closed') {
             document.getElementById(`${quote.quote_name}quoteDetailContainer`).style.animation = 'openDetail .5s forwards';
             document.getElementById(`${quote.quote_name}quoteDetailContainer`).name = 'opened';
-            document.getElementById('quoteArrow').style.display = 'none';
-            document.getElementById('quoteArrowDownContainer').className = 'quoteArrowDownContainerAfter';
+            document.getElementById(`${quote.quote_name}QuoteArrow`).style.display = 'none';
+            document.getElementById(`${quote.quote_name}QuoteArrowDownContainer`).style.display = 'inherit';
         }
         else {
             document.getElementById(`${quote.quote_name}quoteDetailContainer`).style.animation = 'closeDetail .25s forwards';
             document.getElementById(`${quote.quote_name}quoteDetailContainer`).name = 'closed';
-            document.getElementById('quoteArrow').style.display = 'inherit';
-            document.getElementById('quoteArrowDownContainer').className = 'quoteArrowDownContainer';
+            document.getElementById(`${quote.quote_name}QuoteArrow`).style.display = 'inherit';
+            document.getElementById(`${quote.quote_name}QuoteArrowDownContainer`).style.display = 'none';
         }
     }
 
@@ -54,8 +54,15 @@ const QuotesList = (props) => {
             <div id='quoteListTitleContainer' onClick={openDetails}>
                 <div id='quoteListTitle'>{quote.quote_name}</div>
                 <div id='quoteListDate'>{quote.quoteDate}</div>
-                <IoIosArrowForward id='quoteArrow' className='quoteArrow'/>
-                <div id='quoteArrowDownContainer'  className='quoteArrowDownContainer'><IoIosArrowDown id='quoteArrowDown' className='quoteArrowDown'/></div>
+                <IoIosArrowForward id={`${quote.quote_name}QuoteArrow`} style={{
+                    'position': 'relative',
+                    'marginTop': '3vw',
+                    'marginLeft': '6vw',
+                    'fontSize': '8vw'
+                }}/>
+                <IoIosArrowDown id={`${quote.quote_name}QuoteArrowDownContainer`} className='quoteArrowDown' style={{
+                    'display': 'none'
+                }}/>
             </div>
             <div id={`${quote.quote_name}quoteDetailContainer`} style={{
                 'backgroundColor': 'aliceblue',
