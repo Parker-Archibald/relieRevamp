@@ -1,0 +1,79 @@
+.editPhoneModalContainer {
+    display: none;
+}
+
+.editPhoneModalContainerAfter {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px 1px gray;
+    animation: openPhoneModal .5s forwards;
+}
+
+.editPhoneModalContainerAfterClose {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px 1px gray;
+    animation: closePhoneModal .25s forwards;
+}
+
+@keyframes openPhoneModal {
+    from {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+    to {
+        width: 80vw;
+        height: 20vh;
+        top: 20vh;
+        left: 10vw;
+    }
+}
+
+@keyframes closePhoneModal {
+    from {
+        width: 80vw;
+        height: 20vh;
+        top: 20vh;
+        left: 10vw;
+    }
+    to {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+}
+
+#editPhoneModalTitle {
+    background-color: var(--Main-Blue);
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 6vw;
+}
+
+#phoneModalField {
+    position: relative;
+    display: flex;
+}
+
+#phoneModalItemText {
+    margin: 4vw;
+}
+
+#phoneModalItem {
+    margin: 4vw;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 60%;
+}
+
+#phoneModalItem:focus {
+    outline: none;
+}

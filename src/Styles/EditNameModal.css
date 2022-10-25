@@ -1,0 +1,103 @@
+.nameModalContainer {
+    display: none;
+}
+
+.nameModalContainerAfter {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px 1px gray;
+    animation: openEditNameModal .5s forwards;
+}
+
+.nameModalContainerAfterClose {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: closeEditNameModal .25s forwards;
+}
+
+@keyframes openEditNameModal {
+    from {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+    to {
+        width: 80vw;
+        height: 25vh;
+        top: 20vh;
+        left: 10vw;
+    }
+}
+
+@keyframes closeEditNameModal {
+    from {
+        width: 80vw;
+        height: 25vh;
+        top: 20vh;
+        left: 10vw;
+    }
+    to {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+}
+
+#nameModalField {
+    display: flex;
+    flex-direction: column;
+}
+
+#firstNameContainer, #lastNameContainer {
+    display: flex;
+    margin: 3vw;
+}
+
+#nameModalTitle {
+    background-color: var(--Main-Blue);
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 6vw;
+}
+
+#firstNameItem, #lastNameItem {
+    margin-left: 4vw;
+    border: none;
+    border-bottom: 1px solid gray;
+    text-indent: 2vw;
+}
+
+#firstNameItem:focus, #lastNameItem:focus {
+    outline: none;
+}
+
+#nameModalButtonsContainer {
+    position: relative;
+    display: flex;
+    width: 50vw;
+    left: 15vw;
+}
+
+#nameModalCancel, #nameModalSubmit {
+    margin: 2vw;
+    width: 20vw;
+    height: 4vh;
+    line-height: 4vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#nameModalCancel {
+    background-color: lightgray;
+}
+
+#nameModalSubmit {
+    background-color: var(--Main-Blue);
+}

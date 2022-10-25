@@ -1,0 +1,80 @@
+.editEmailModalContainer {
+    display: none;
+}
+
+.editEmailModalContainerAfter {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px 1px gray;
+    animation: openEmailModal .5s forwards;
+}
+
+.editEmailModalContainerAfterClose {
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: closeEmailModal .25s forwards;
+}
+
+@keyframes openEmailModal {
+    from {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+    to {
+        width: 80vw;
+        height: 20vh;
+        top: 20vh;
+        left: 10vw;
+    }
+}
+
+@keyframes closeEmailModal {
+    from {
+        width: 80vw;
+        height: 20vh;
+        top: 20vh;
+        left: 10vw;
+    }
+    to {
+        width: 0vw;
+        height: 0vh;
+        top: 50vh;
+        left: 50vw;
+    }
+}
+
+#editEmailModalTitle {
+    background-color: var(--Main-Blue);
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 6vw;
+}
+
+#editEmailModalField {
+    display: flex;
+    position: relative;
+    top: 4vh;
+    left: 4vw;
+}
+
+#editEmailModalItem {
+    position: relative;
+    margin-left: 6vw;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 60%;
+}
+
+#emailModalButtonsContainer {
+    position: relative;
+    display: flex;
+    top: 6vh;
+    left: 15vw;
+}

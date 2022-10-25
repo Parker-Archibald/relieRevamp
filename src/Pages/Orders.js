@@ -20,7 +20,7 @@ const Orders = () => {
 
         await fetch(`${RELIE_API}myOrders/${localStorage.getItem('id')}`)
         .then(results => results.json())
-        .then(results => results.map(() => <OrderList info={results} key={order}/>))
+        .then(results => results.map(data => <OrderList info={data} key={order}/>))
         .then(results => setOrder({orderData: results}))
     }
 

@@ -43,8 +43,26 @@
     margin: 2vw;
     font-size: 5vw;
     padding-bottom: 4vw;
+    display: flex;
+}
+
+#profileCatTitle {
+    width: 16vw;
 }
 
 #profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined {
     border-bottom: 1px solid gray;
+    display: flex;
+}
+
+#profileFirstText, #profileLastText, #profileEmailText, #profilePhoneText, #profileJoinedText, #profileStatusText {
+    position: relative;
+    width: 60%;
+    text-align: center;
+}
+
+#profileNameIcon, #profileEmailIcon, #profilePhoneIcon {
+    position: relative;
+    margin-left: 12vw;
+    top: .5vw;
 }

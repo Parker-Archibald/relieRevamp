@@ -5,14 +5,15 @@ import {IoIosArrowForward} from 'react-icons/io';
 const OrderList = (props) => {
 
     const [order, setOrder] = useState({
-        cust_id: props.info[0].cust_id,
-        order_id: props.info[0].order_id,
-        quote_id: props.info[0].quote_id,
-        total_amount: props.info[0].total_amount,
-        order_date: props.info[0].order_date
+        cust_id: props.info.cust_id,
+        order_id: props.info.order_id,
+        quote_id: props.info.quote_id,
+        total_amount: 0,
+        order_date: props.info.order_date
     })
 
     useEffect(() => {
+        setTotal();
         getCustomerData();
     }, [])
 
@@ -22,8 +23,17 @@ const OrderList = (props) => {
         .then(results => setOrder(previousData => {
             return {...previousData, fname: results[0].fname, lname: results[0].lname}
         }))
+    }
 
-        
+    async function setTotal() {
+        if(!props.info.total_amount || props.info.total_amount === null) {
+            return
+        }
+        else {
+            setOrder(previousData => {
+                return {...previousData, total_amount: props.info.total_amount}
+            })
+        }
     }
 
     return(

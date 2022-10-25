@@ -15,11 +15,14 @@
 
 #orderListName {
     margin-left: 2%;
+    width: 40vw;
+    overflow: hidden;
 }
 
 #orderListCost {
     position: relative;
-    margin-left: 50%;
+    margin-left: 20vw;
+    width: 10vw;
 }
 
 #orderListArrow {
