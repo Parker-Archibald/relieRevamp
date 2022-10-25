@@ -1,0 +1,46 @@
+#newQuoteMainTitle {
+    font-size: 8vw;
+    text-align: center;
+    background-color: var(--Main-Blue);
+    height: 8vh;
+    line-height: 8vh;
+}
+
+#newQuoteMainAll {
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    left: 5%;
+    top: 2vh;
+    border-radius: 8px;
+}
+
+#newQuoteAllTitle {
+    font-size: 6vw;
+    margin: 4vw;
+}
+
+#quoteMainNameContainer {
+    position: relative;
+    display: flex;
+    margin: 2vw;
+}
+
+#quoteMainNameInput {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-left: 2vw;
+    width: 55vw;
+    text-indent: 2vw;
+}
+
+#quoteMainNameInput:focus {
+    outline: none;
+}
+
+#newQuoteDate {
+    margin-left: 4vw;
+}

@@ -7,6 +7,7 @@ import Orders from '../Pages/Orders';
 import Quotes from '../Pages/Quotes';
 import Training from '../Pages/Training';
 import Profile from '../Pages/Profile';
+import NewQuoteMain from '../Pages/NewQuoteMain';
 
 const Routing = () => {
 
@@ -18,7 +19,9 @@ const Routing = () => {
                 <Route path='/quotes' element={<Quotes/>}/>
                 <Route path='/training' element={<Training/>}/>
                 <Route path='/profile' element={<Profile/>}/>
+                <Route path='/newQuote' element={<NewQuoteMain/>}/>
                 <Route path='*' element={<ErrorPage/>}/>
+                
             </Routes>
         )
     }

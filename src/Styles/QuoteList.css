@@ -68,7 +68,7 @@
         height: 0vh;
     }
     to {
-        height: 25vh;
+        height: 30vh;
     }
 }
 
@@ -79,4 +79,15 @@
     to {
         height: 0vh;
     }
+}
+
+#singleQuoteEditButtn {
+    position: relative;
+    background-color: lightgray;
+    width: 20%;
+    height: 3.5vh;
+    line-height: 3.5vh;
+    text-align: center;
+    border-radius: 10px;
+    left: 40%;
 }

@@ -81,6 +81,7 @@ const QuotesList = (props) => {
                 <div id='singleQuoteTot1Text'>Total 1: <div id='singleQuoteTot1'>${quote.quote_tot1.toLocaleString()}</div></div>
                 <div id='singleQuoteUnderline'/>
                 <div id='singleQuoteTot2Text'>Total 2: <div id='singleQuoteTot2'>${quote.quote_tot2.toLocaleString()}</div></div>
+                <div id='singleQuoteEditButtn'>Edit</div>
             </div>
         </div>
     )

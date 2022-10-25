@@ -3,6 +3,7 @@ import '../Styles/Quotes.css';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {RELIE_API} from '../Config/Com';
 import QuotesList from '../Components/QuotesList';
+import {Link} from 'react-router-dom';
 
 const Quotes = () => {
 
@@ -27,7 +28,7 @@ const Quotes = () => {
             <div id='quotesAll'>
                 <div id='quotesTopContainer'>
                     <div id='quotesTopTitle'>My Quotes</div>
-                    <div id='addQuoteButton'>New Quote</div>
+                    <Link to='/newQuote' id='addQuoteButton' style={{'color': 'black', 'textDecoration': 'none'}}>New Quote</Link>
                 </div>
                 <div id='quotesTopLine'/>
                 <div id='searchQuotesContainer'>
