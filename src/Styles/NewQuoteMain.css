@@ -17,9 +17,18 @@
     border-radius: 8px;
 }
 
+#newQuoteTop {
+    display: flex;
+    margin: 4vw;
+}
+
 #newQuoteAllTitle {
     font-size: 6vw;
-    margin: 4vw;
+}
+
+#newQuoteDate {
+    margin-left: 32vw;
+    margin-top: 2vw;
 }
 
 #quoteMainNameContainer {
@@ -28,19 +37,88 @@
     margin: 2vw;
 }
 
-#quoteMainNameInput {
+.quoteMainNameText {
+    position: absolute;
+    z-index: 100;
+    top: 0vh;
+    left: 4vw;
+    color: gray;
+    font-size: 3vw;
+}
+
+.quoteMainNameTextAfter {
+    position: absolute;
+    z-index: 100;
+    left: 4vw;
+    color: gray;
+    font-size: 3vw;
+    animation: shiftTextUp .25s forwards;
+}
+
+.quoteMainNameTextAfterClose {
+    position: absolute;
+    z-index: 100;
+    left: 4vw;
+    color: gray;
+    font-size: 3vw;
+    animation: shiftTextDown .25s forwards;
+}
+
+.quoteMainPhoneText {
+    position: absolute;
+    z-index: 100;
+    left: 46vw;
+    top: 0vh;
+    color: gray;
+    font-size: 3vw;
+}
+
+.quoteMainPhoneTextAfter {
+    position: absolute;
+    z-index: 100;
+    left: 46vw;
+    color: gray;
+    font-size: 3vw;
+    animation: shiftTextUp .25s forwards;
+}
+
+.quoteMainPhoneTextAfterClose {
+    position: absolute;
+    z-index: 100;
+    left: 46vw;
+    top: 2vh;
+    color: gray;
+    font-size: 3vw;
+    animation: shiftTextDown .25s forwards;
+}
+
+@keyframes shiftTextUp {
+    from {
+        top: 0vh;
+    }
+    to {
+        top: -2vh;
+    }
+}
+
+@keyframes shiftTextDown {
+    from {
+        top: -2vh;
+    }
+    to {
+        top: 0vh;
+    }
+}
+
+#quoteMainNameInput, #quoteMainPhoneInput {
     position: relative;
     border: none;
     border-bottom: 1px solid gray;
-    margin-left: 2vw;
-    width: 55vw;
-    text-indent: 2vw;
+    margin-left: 3vw;
+    width: 38vw;
+    text-indent: 1vw;
 }
 
-#quoteMainNameInput:focus {
+#quoteMainNameInput:focus, #quoteMainPhoneInput:focus {
     outline: none;
-}
-
-#newQuoteDate {
-    margin-left: 4vw;
 }
