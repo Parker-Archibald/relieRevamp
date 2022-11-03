@@ -1,0 +1,25 @@
+#newQuoteSecondQuoteAmountsContainer {
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid lightblue;
+    padding-bottom: 2.5vh;
+    width: 90%;
+    left: 5%;
+}
+
+#newQuoteSecondQuote1Container, #newQuoteSecondQuote2Container {
+    margin-left: 3vw;
+    margin-top: 2vh;
+    width: 45%;
+}
+
+#newQuoteSecondQuote1Text, #newQuoteSecondQuote2Text {
+    margin-left: 4vw;
+}
+
+#newQuoteSecondQuote1Amount, #newQuoteSecondQuote2Amount {
+    position: relative;
+    border: 1px solid gray;
+    margin: 2vw;
+    text-indent: 2vw;
+}

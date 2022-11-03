@@ -1,7 +1,7 @@
 #profileEditButton {
     position: relative;
     background-color: var(--Main-Blue);
-    top: -15vh;
+    top: -18vh;
     width: 30vw;
     height: 10vw;
     text-align: center;
@@ -18,7 +18,7 @@
     background-color: white;
     position: fixed;
     border-radius: 10px;
-    overflow: hidden;
+    overflow: scroll;
     box-shadow: 2px 2px 4px 1px gray;
     animation: openProfileModal .5s forwards;
 }
@@ -32,9 +32,9 @@
     }
     to {
         width: 80vw;
-        height: 70vh;
+        height: 75vh;
         left: 10vw;
-        top: 15vh;
+        top: 12vh;
     }
 }
 
@@ -71,6 +71,14 @@
     font-size: 6vw;
 }
 
+#editProfileX {
+    position: absolute;
+    right: 0;
+    margin-right: 4vw;
+    top: 0;
+    margin-top: 1vh;
+}
+
 #editProfileModalPicture {
     position: relative;
     width: 25vw;
@@ -83,19 +91,20 @@
     flex-direction: column;
 }
 
-#profileModalFnameText, #profileModalLnameText, #profileModalEmailText, #profileModalPhoneText {
+#profileModalFnameText, #profileModalLnameText, #profileModalEmailText, #profileModalPhoneText, #profileModalMaritalStatusText,
+#profileModalStreetText {
     margin: 2vw;
     display: flex;
     flex-direction: column;
 }
 
-#profileModalFname, #profileModalLname, #profileModalEmail, #profileModalPhone {
+#profileModalFname, #profileModalLname, #profileModalEmail, #profileModalPhone, #profileModalMaritalStatus, #profileModalStreet {
     margin: 3vw;
     border: none;
     border-bottom: 1px solid gray;
 }
 
-#profileModalFname:focus, #profileModalLname:focus, #profileModalEmail:focus, #profileModalPhone:focus {
+#profileModalFname:focus, #profileModalLname:focus, #profileModalEmail:focus, #profileModalPhone:focus, #profileModalMaritalStatus:focus, #profileModalStreet:focus {
     outline: none;
 }
 
@@ -116,4 +125,27 @@
 
 #profileModalCancelButton {
     background-color: lightgray;
+}
+
+#profileAddressContainer {
+    display: flex;
+}
+
+#profileModalCityText, #profileModalZipCodeText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
+#profileModalCity, #profileModalZipCode {
+    width: 80%;
+    margin-left: 4%;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 2vh;
+}
+
+#profileModalCity:focus, #profileModalZipCode:focus {
+    outline: none;
 }

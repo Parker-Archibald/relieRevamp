@@ -11,7 +11,8 @@ const Profile = () => {
 
     const [state, setState] = useState({
         first_name: '',
-        last_name: ''
+        last_name: '',
+        maritalStatus: ''
     });
 
     useEffect(() => {
@@ -34,25 +35,26 @@ const Profile = () => {
             const newDate = month + '/' + day + '/' + year;
 
             setState({first_name: results[0].first_name, last_name: results[0].last_name, email: results[0].email, 
-                phone: results[0].phone_number, joined: newDate, status: results[0].status
+                phone: results[0].phone_number, joined: newDate, status: results[0].status, address: results[0].address, zipcode: results[0].zipcode
             })
-        })
-    }
 
-    const handleOpenModal = (e) => {
+            if(results[1].marital_status === 'U') {
+                setState(previousData => {
+                    return {...previousData, maritalStatus: "Unmarried"}
+                })
+            }
+            else if(results[1].marital_status === "M") {
+                setState(previousData => {
+                    return {...previousData, maritalStatus: "Married"}
+                })
+            }
+            else {
+                setState(previousData => {
+                    return {...previousData, maritalStatus: results[1].marital_status}
+                })
+            }
+        });
 
-        if(e.target.id === 'name') {
-            document.getElementById('nameModalContainer').className = 'nameModalContainerAfter';
-            document.getElementById('profileAll').style = 'filter: blur(10px)';
-        }
-        else if(e.target.id === 'email') {
-            document.getElementById('editEmailModalContainer').className = 'editEmailModalContainerAfter';
-            document.getElementById('profileAll').style = 'filter: blur(10px)';
-        }
-        else if(e.target.id === 'phone') {
-            document.getElementById('editPhoneModalContainer').className = 'editPhoneModalContainerAfter';
-            document.getElementById('profileAll').style = 'filter: blur(10px)';
-        }
     }
 
     return (
@@ -65,27 +67,22 @@ const Profile = () => {
                     <div id='profileFirst'>
                         <div id='profileCatTitle'>Name:</div>
                         <div id='profileFirstText'>{state.first_name} {state.last_name}</div>
-                        <div id='profileNameIcon'><FiEdit id='name' onClick={handleOpenModal}/></div>
                         </div>
-                    {/* <div id='profileLast'>Last Name: <div id='profileLastText'>{state.last_name}</div><NewEditProfile info={state.last_name} id='editIcon'/></div> */}
                     <div id='profileEmail'>
                         <div id='profileCatTitle'>Email:</div>
                         <div id='profileEmailText'>{state.email}</div>
-                        <div id='profileEmailIcon'><FiEdit id='email' onClick={handleOpenModal}/></div>
                     </div>
                     <div id='profilePhone'>
                         <div id='profileCatTitle'>Phone:</div>
                         <div id='profilePhoneText'>{state.phone}</div>
-                        <div id='profilePhoneIcon'><FiEdit id='phone' onClick={handleOpenModal}/></div>
                     </div>
+                    <div id='profileAddress'><div id='profileCatTitle'>Address:</div><div id='profileAddressText'>{state.address}</div></div>
                     <div id='profileJoined'><div id='profileCatTitle'>Joined:</div><div id='profileJoinedText'>{state.joined}</div></div>
                     <div id='profileStatus'><div id='profileCatTitle'>Status:</div><div id='profileStatusText'>{state.status}</div></div>
+                    <div id='profileMaritalStatus'><div id='profileMStatusTitle'>Marital Status:</div><div id='profileMaritalStatusText'>{state.maritalStatus}</div></div>
                 </div>
             </div>
-            {/* <EditProfileModal info={state}/> */}
-            <EditNameModal info={state}/>
-            <EditEmailModal info={state}/>
-            <EditPhoneModal info={state}/>
+            <EditProfileModal info={state}/>
         </div>
     )
 }

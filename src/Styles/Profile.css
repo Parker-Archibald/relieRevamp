@@ -37,9 +37,10 @@
     display: flex;
     flex-direction: column;
     box-shadow: 2px 2px 4px 1px gray;
+    border-radius: 10px;
 }
 
-#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined, #profileStatus {
+#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined, #profileStatus, #profileMaritalStatus, #profileAddress {
     margin: 2vw;
     font-size: 5vw;
     padding-bottom: 4vw;
@@ -47,23 +48,28 @@
 }
 
 #profileCatTitle {
-    width: 16vw;
+    width: 20vw;
 }
 
-#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined {
+#profileMStatusTitle {
+    width: 40vw;
+}
+
+#profileFirst, #profileLast, #profileEmail, #profilePhone, #profileJoined, #profileStatus, #profileAddress {
     border-bottom: 1px solid gray;
     display: flex;
 }
 
-#profileFirstText, #profileLastText, #profileEmailText, #profilePhoneText, #profileJoinedText, #profileStatusText {
+#profileFirstText, #profileLastText, #profileEmailText, #profilePhoneText, #profileJoinedText, #profileStatusText, #profileAddressText {
     position: relative;
-    width: 60%;
+    width: 80%;
     text-align: center;
     overflow: scroll;
 }
 
-#profileNameIcon, #profileEmailIcon, #profilePhoneIcon {
+#profileMaritalStatusText {
     position: relative;
-    margin-left: 12vw;
-    top: .5vw;
+    margin-left: 5vw;
+    text-align: center;
+    overflow: scroll;
 }
