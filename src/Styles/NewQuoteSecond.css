@@ -1,3 +1,8 @@
+#newQuoteMainAll {
+    display: flex;
+    flex-direction: column;
+}
+
 #newQuoteSecondQuoteAmountsContainer {
     display: flex;
     position: relative;
@@ -21,5 +26,81 @@
     position: relative;
     border: 1px solid gray;
     margin: 2vw;
-    text-indent: 2vw;
+    text-indent: 4vw;
+}
+
+@keyframes moveProductName {
+    from {
+        left: 25%;
+        text-align: center;
+    }
+    to {
+        left: 5%;
+        text-align: inherit;
+    }
+}
+
+@keyframes moveProductNameBack {
+    from {
+        left: 5%;
+        text-align: inherit;
+    }
+    to {
+        left: 25%;
+        text-align: center;
+    }
+}
+
+#newQuoteSecondTotalAfterInstallContainer {
+    display: flex;
+    margin-top: 3vh;
+    width: 100%;
+    font-size: 5vw;
+    font-weight: 600;
+}
+
+#newQuoteSecondTotalAfterInstallTitle {
+    text-indent: 4vw;
+    width: 50%;
+}
+
+#newQUoteSecondTotalAfterInstallAmount1 {
+    margin-left: 12vw;
+}
+
+#newQUoteSecondTotalAfterInstallAmount2 {
+    margin-left: 10vw;
+}
+
+#newQuoteSecondRebateContainer {
+    display: flex;
+    margin-top: 2vh;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 2vh;
+    border-top: 1px solid lightgray;
+    padding-top: 2vh;
+    width: 100%;
+}
+
+.newQuoteSecondRebateTitle {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    text-align: center;
+}
+
+.newQuoteSecondRebate1 {
+    display: none;
+}
+
+.newQuoteSecondRebate2 {
+    display: none;
+}
+
+.newQuoteSecondRebate1After {
+    margin-left: 13vw;
+}
+
+.newQuoteSecondRebate2After {
+    margin-left: 8vw;
 }

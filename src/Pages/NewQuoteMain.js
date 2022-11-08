@@ -9,7 +9,12 @@ const NewQuoteMain = () => {
         date: '',
         allProducts: [],
         adminFees: [],
-        insulationTypes: []
+        insulationTypes: [],
+    })
+
+    const [totalAmount, setTotalAmount] = useState({
+        total1: 100,
+        total2: 50
     })
 
     useEffect(() => {
@@ -190,7 +195,7 @@ const NewQuoteMain = () => {
                     </div>
                     <div id='newQuoteMainButtonsContainer'>
                         <Link to='/quotes' id='newQuoteCancelButton' style={{'textDecoration': 'none', 'color': 'black'}}>Cancel</Link>
-                        <Link to='/newQuoteSecond' id='newQuoteNextButton' style={{'textDecoration': 'none', 'color': 'black'}}>Next</Link>
+                        <Link to='/newQuoteSecond' state={{from: '/NewQuoteMain', total: totalAmount}} id='newQuoteNextButton' style={{'textDecoration': 'none', 'color': 'black'}}>Next</Link>
                     </div>
                 </div>
             </div>
