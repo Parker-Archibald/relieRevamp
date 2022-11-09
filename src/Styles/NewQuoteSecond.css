@@ -29,6 +29,8 @@
     text-indent: 4vw;
 }
 
+
+
 @keyframes moveProductName {
     from {
         left: 25%;
@@ -82,25 +84,55 @@
     width: 100%;
 }
 
-.newQuoteSecondRebateTitle {
+.newQuoteSecondRebateTitle, .newQuoteSecondTaxCreditTitle {
     position: relative;
     width: 50%;
     left: 25%;
     text-align: center;
 }
 
-.newQuoteSecondRebate1 {
+.newQuoteSecondRebateTitleAfter, .newQuoteSecondTaxCreditTitleAfter {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    animation: moveProductName .25s forwards;
+}
+
+.newQuoteSecondRebateTitleAfterClose, .newQuoteSecondTaxCreditTitleAfterClose {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    animation: moveProductNameBack .25s forwards;
+}
+
+.newQuoteSecondRebate1, .newQuoteSecondTaxCredit1 {
     display: none;
 }
 
-.newQuoteSecondRebate2 {
+.newQuoteSecondRebate2, .newQuoteSecondTaxCredit2 {
     display: none;
 }
 
-.newQuoteSecondRebate1After {
+.newQuoteSecondRebate1After, .newQuoteSecondTaxCredit1After {
     margin-left: 13vw;
 }
 
-.newQuoteSecondRebate2After {
+.newQuoteSecondRebate2After, .newQuoteSecondTaxCredit2After {
     margin-left: 8vw;
+}
+
+.newQuoteSecondRebate1AfterClose, .newQuoteSecondTaxCredit1AfterClose {
+    display: none;
+}
+
+.newQuoteSecondRebate2AfterClose, .newQuoteSecondTaxCredit2AfterClose {
+    display: none;
+}
+
+#newQuoteSecondTaxCreditContainer {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    width: 100%;
 }

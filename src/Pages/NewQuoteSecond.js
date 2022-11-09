@@ -110,7 +110,26 @@ const NewQuoteSecond = () => {
     }
 
     const handleProdShiftOuter = (e) => {
-        
+        if(e.target.className === 'newQuoteSecondRebateTitle' || e.target.className === 'newQuoteSecondRebateTitleAfterClose') {
+            document.getElementById(e.target.id).className = 'newQuoteSecondRebateTitleAfter';
+            document.getElementById('newQuoteSecondRebate1').className = 'newQuoteSecondRebate1After';
+            document.getElementById('newQuoteSecondRebate2').className = 'newQuoteSecondRebate2After';
+        }
+        else if(e.target.className === 'newQuoteSecondRebateTitleAfter') {
+            document.getElementById(e.target.id).className = 'newQuoteSecondRebateTitleAfterClose';
+            document.getElementById('newQuoteSecondRebate1').className = 'newQuoteSecondRebate1AfterClose';
+            document.getElementById('newQuoteSecondRebate2').className = 'newQuoteSecondRebate2AfterClose';
+        }
+        else if(e.target.className === 'newQuoteSecondTaxCreditTitle' || e.target.className === 'newQuoteSecondTaxCreditTitleAfterClose') {
+            document.getElementById(e.target.id).className = 'newQuoteSecondTaxCreditTitleAfter';
+            document.getElementById('newQuoteSecondTaxCredit1').className = 'newQuoteSecondTaxCredit1After';
+            document.getElementById('newQuoteSecondTaxCredit2').className = 'newQuoteSecondTaxCredit2After';
+        }
+        else if(e.target.className === 'newQuoteSecondTaxCreditTitleAfter') {
+            document.getElementById(e.target.id).className = 'newQuoteSecondTaxCreditTitleAfterClose';
+            document.getElementById('newQuoteSecondTaxCredit1').className = 'newQuoteSecondTaxCredit1AfterClose';
+            document.getElementById('newQuoteSecondTaxCredit2').className = 'newQuoteSecondTaxCredit2AfterClose';
+        }
     }
 
     return (
@@ -141,7 +160,12 @@ const NewQuoteSecond = () => {
                         <div id='newQuoteSecondRebateContainer'>
                             <div id='newQuoteSecondRebateTitle' className='newQuoteSecondRebateTitle' onClick={handleProdShiftOuter}>Rebate</div>
                             <div id='newQuoteSecondRebate1' className='newQuoteSecondRebate1'>{newQuote.previousTotal1}</div>
-                            <div id='newQuoteSecondRebate2' className='newQuoteSecondRebate2'>{newQuote.previousTotal1}</div>
+                            <div id='newQuoteSecondRebate2' className='newQuoteSecondRebate2'>{newQuote.previousTotal2}</div>
+                        </div>
+                        <div id='newQuoteSecondTaxCreditContainer'>
+                            <div id='newQuoteSecondTaxCreditTitle' className='newQuoteSecondTaxCreditTitle' onClick={handleProdShiftOuter}>Tax Credit</div>
+                            <div id='newQuoteSecondTaxCredit1' className='newQuoteSecondTaxCredit1'>{newQuote.previousTotal1}</div>
+                            <div id='newQuoteSecondTaxCredit2' className='newQuoteSecondTaxCredit2'>{newQuote.previousTotal2}</div>
                         </div>
                 </div>
                 <div id='newQuoteSecondBackButton' onClick={() => navigate(-1)}>Back</div>
