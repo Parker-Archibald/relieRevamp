@@ -167,8 +167,16 @@ const NewQuoteSecond = () => {
                             <div id='newQuoteSecondTaxCredit1' className='newQuoteSecondTaxCredit1'>{newQuote.previousTotal1}</div>
                             <div id='newQuoteSecondTaxCredit2' className='newQuoteSecondTaxCredit2'>{newQuote.previousTotal2}</div>
                         </div>
+                        <div id='newQuoteSecondTotalInvContainer'>
+                            <div id='newQuoteSecondTotalInvTitle' className='newQuoteSecondTotalInvTitle' onClick={handleProdShiftOuter}>Total Investment</div>
+                            <div id='newQuoteSecondTotalInv1' className='newQuoteSecondTotalInv1'>{newQuote.previousTotal1}</div>
+                            <div id='newQuoteSecondTotalInv2' className='newQuoteSecondTotalInv2'>{newQuote.previousTotal2}</div>
+                        </div>
                 </div>
-                <div id='newQuoteSecondBackButton' onClick={() => navigate(-1)}>Back</div>
+                <div id='newQuoteSecondButtons'>
+                    <div id='newQuoteSecondBackButton' onClick={() => navigate(-1)}>Back</div>
+                    <div id='newQuoteSecondSubmitButton'>Submit</div>
+                </div>
             </div>
         </div>
     )

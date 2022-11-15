@@ -55,22 +55,29 @@
 
 #newQuoteSecondTotalAfterInstallContainer {
     display: flex;
-    margin-top: 3vh;
+    margin-top: 2vh;
     width: 100%;
     font-size: 5vw;
     font-weight: 600;
 }
 
-#newQuoteSecondTotalAfterInstallTitle {
+#newQuoteSecondTotalInvContainer {
+    display: flex;
+    width: 100%;
+    font-size: 5vw;
+    font-weight: 600;
+}
+
+#newQuoteSecondTotalAfterInstallTitle, #newQuoteSecondTotalInvTitle {
     text-indent: 4vw;
     width: 50%;
 }
 
-#newQUoteSecondTotalAfterInstallAmount1 {
+#newQUoteSecondTotalAfterInstallAmount1, #newQuoteSecondTotalInv1 {
     margin-left: 12vw;
 }
 
-#newQUoteSecondTotalAfterInstallAmount2 {
+#newQUoteSecondTotalAfterInstallAmount2, #newQuoteSecondTotalInv2 {
     margin-left: 10vw;
 }
 
@@ -129,10 +136,33 @@
     display: none;
 }
 
-#newQuoteSecondTaxCreditContainer {
+#newQuoteSecondTaxCreditContainer, #newQuoteSecondTotalInvContainer {
     display: flex;
     border-bottom: 1px solid lightgray;
     padding-bottom: 2vh;
     padding-top: 2vh;
     width: 100%;
+}
+
+#newQuoteSecondButtons {
+    display: flex;
+    margin-top: 2vh;
+}
+
+#newQuoteSecondSubmitButton {
+    background-color: var(--Main-Blue);
+}
+
+#newQuoteSecondBackButton, #newQuoteSecondSubmitButton {
+    margin: 2vw;
+    width: 20vw;
+    height: 4vh;
+    text-align: center;
+    line-height: 4vh;
+    border-radius: 10px;
+}
+
+#newQuoteSecondBackButton {
+    background-color: lightgray;
+    margin-left: 22vw;
 }

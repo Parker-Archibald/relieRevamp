@@ -12,10 +12,7 @@ const NewQuoteMain = () => {
         insulationTypes: [],
     })
 
-    const [totalAmount, setTotalAmount] = useState({
-        total1: 100,
-        total2: 50
-    })
+    const [totalAmount, setTotalAmount] = useState();
 
     useEffect(() => {
         setDate();
@@ -43,10 +40,19 @@ const NewQuoteMain = () => {
             let newAdminFees = [];
             let prodRest = [];
             let prodList = [];
+            let tempAmount1 = 0;
+            let tempAmount2 = 0;
 
             for(let i = 0; i < results.length; i++) {
                 if(results[i].prod_type_id === 1) {
-                    newAdminFees.push(results[i].prod_name)
+                    newAdminFees.push(results[i])
+                }
+                else if(results[i].prod_type_id === 4) {
+                    setTotalAmount(() => {
+                        return { total1: results[i].prod_cost, total2: results[i].prod_cost}
+                    })
+                    tempAmount1 = results[i].prod_cost
+                    tempAmount2 = results[i].prod_cost
                 }
                 else {
                     prodRest.push(results[i])
@@ -54,7 +60,7 @@ const NewQuoteMain = () => {
             }
 
             newAdminFees = newAdminFees.map(data => {
-                return (<option>{data}</option>)
+                return (<option>{data.prod_name}</option>)
             })
 
             for(let i = 0; i < prodRest.length; i++) {
@@ -66,19 +72,96 @@ const NewQuoteMain = () => {
             const handleOutlineClick = (e) => {
                 document.getElementById(e.target.id).style.outline = 'none';
             }
-
-            const openInputs = (e) => {
-                if(document.getElementById(`${e.target.name}Quote1`).style.display === 'none') {
-                    document.getElementById(`${e.target.name}Quote1`).style.display = 'inherit'
-                    document.getElementById(`${e.target.name}Quote2`).style.display = 'inherit'
-                }
-                else {
-                    document.getElementById(`${e.target.name}Quote1`).style.display = 'none'
-                    document.getElementById(`${e.target.name}Quote2`).style.display = 'none'
-                }
-            }
-
+        
             prodList = prodList.map(data => {
+
+                const openInputs = (e) => {
+                    if(document.getElementById(`${e.target.name}Quote1`).style.display === 'none') {
+                        document.getElementById(`${e.target.name}Quote1`).style.display = 'inherit'
+                        document.getElementById(`${e.target.name}Quote2`).style.display = 'inherit'
+                    }
+                    else {
+                        document.getElementById(`${e.target.name}Quote1`).style.display = 'none'
+                        document.getElementById(`${e.target.name}Quote2`).style.display = 'none'
+                    }
+
+                    handleUpdateTotal(e);
+                }
+
+                const handleUpdateTotal = (e) => {
+                    if(document.getElementById(e.target.id).checked) {
+                        tempAmount1 += data.prod_cost;
+                        tempAmount2 += data.prod_cost;
+
+                        setTotalAmount(previousData => {
+                            return {previousData, total1: tempAmount1, total2: tempAmount2}
+                        })
+                    }
+                    else {
+                        tempAmount1 -= data.prod_cost;
+                        tempAmount2 -= data.prod_cost;
+                        setTotalAmount({total1: tempAmount1, total2: tempAmount2})
+                    }
+                    
+                }
+                
+                const handleUpdateProdAmount = (e) => {
+                    if(e.target.id === `${data.prod_name}Quote1`) {
+                        if(e.target.value < 0) {
+                            alert("Value needs to be positive.")
+                            e.target.value = 1;
+                        }
+                        else if(e.target.value === 0 || e.target.value === '0') {
+                            let amount = tempAmount1 - data.prod_cost;
+                            setTotalAmount(previousData => {
+                                return {...previousData, total1: amount}
+                            })
+                        }
+                        else if(e.target.id === 1) {
+                            let amount = totalAmount.total1 - data.prod_cost;
+                            setTotalAmount(previousData => {
+                                return {...previousData, total1: amount}
+                            })
+                        }
+                        else {
+                            let amount = tempAmount1 - data.prod_cost;
+                            let totalCost = e.target.value * data.prod_cost;
+                            let t = amount + totalCost;
+
+                            setTotalAmount(previousData => {
+                                return {...previousData, total1: t}
+                            })
+                        }
+                    }
+                    else {
+                        if(e.target.value < 0) {
+                            alert("Value needs to be positive.")
+                            e.target.value = 1;
+                        }
+                        else if(e.target.value === 0 || e.target.value === '0') {
+                            let amount = tempAmount2 - data.prod_cost;
+                            setTotalAmount(previousData => {
+                                return {...previousData, total2: amount}
+                            })
+                        }
+                        else if(e.target.id === 1) {
+                            let amount = totalAmount.total2 - data.prod_cost;
+                            setTotalAmount(previousData => {
+                                return {...previousData, total2: amount}
+                            })
+                        }
+                        else {
+                            let amount = tempAmount2 - data.prod_cost;
+                            let totalCost = e.target.value * data.prod_cost;
+                            let t = amount + totalCost;
+
+                            setTotalAmount(previousData => {
+                                return {...previousData, total2: t}
+                            })
+                        }
+                    }
+                }
+
                 return (
                     <div id={`${data.prod_name}Container`} style={{
                     'display': 'flex',
@@ -89,13 +172,13 @@ const NewQuoteMain = () => {
                     'position': 'relative',
                     'left': '2.5%'
                     }}>
-                        <input type='checkbox' name={`${data.prod_name}`} style={{'marginLeft': '3vw'}} onClick={openInputs}/>
+                        <input type='checkbox' id={`${data.prod_name}Checkbox`} name={`${data.prod_name}`} style={{'marginLeft': '3vw'}} onClick={openInputs}/>
                         <div id={`${data.prod_name}Title`} style={{
                             'marginLeft': '2vw',
                             'width': '50vw'
                         }}>{data.prod_name}</div>
-                        <input id={`${data.prod_name}Quote1`} style={{'display': 'none', 'width': '10%', 'position': 'relative'}} onClick={handleOutlineClick} placeholder='1'/>
-                        <input id={`${data.prod_name}Quote2`} style={{'display': 'none', 'width': '10%', 'marginLeft': '2vw'}} onClick={handleOutlineClick} placeholder='1'/>
+                        <input type='number' id={`${data.prod_name}Quote1`} name={`${data.prod_name}`} style={{'display': 'none', 'width': '10%', 'position': 'relative'}} onClick={handleOutlineClick} onChange={handleUpdateProdAmount} placeholder='1'/>
+                        <input type='number' id={`${data.prod_name}Quote2`} name={`${data.prod_name}`} style={{'display': 'none', 'width': '10%', 'marginLeft': '2vw'}} onClick={handleOutlineClick} onChange={handleUpdateProdAmount} placeholder='1'/>
                     </div>
                 )
             })
